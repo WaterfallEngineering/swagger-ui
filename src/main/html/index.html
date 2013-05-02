@@ -15,12 +15,14 @@
     <script src='lib/swagger.js' type='text/javascript'></script>
     <script src='swagger-ui.js' type='text/javascript'></script>
     <script src='lib/highlight.7.3.pack.js' type='text/javascript'></script>
+    <script src='lib/waterfall.js' type='text/javascript'></script>
 
     <script type="text/javascript">
 	$(function () {
 	    window.swaggerUi = new SwaggerUi({
                 discoveryUrl:"http://localhost:8080/api/api-docs",
-                apiKey:"special-key",
+                apiKeyName:"version",
+                apiKey:null,   // by default, don't filter by version
                 dom_id:"swagger-ui-container",
                 supportHeaderParams: false,
                 supportedSubmitMethods: ['get', 'post', 'put'],
@@ -51,6 +53,8 @@
 <div id='header'>
     <div class="swagger-ui-wrap">
         <a id="logo" href="http://waterfallmobile.com">Waterfall Mobile APIs</a>
+        <input id="cbV1" type="checkbox">v1</input>
+        <input id="cbV2" type="checkbox">v2</input>
     </div>
 </div>
 
